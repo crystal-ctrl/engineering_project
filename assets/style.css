@@ -1,0 +1,49 @@
+body {
+  background-color: #EAECEE;
+  margin: 5%;
+}
+.card_container {
+  border-radius: 5px;
+  background-color: #FBFCFC;
+  margin: 5px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 4px 4px 2px #e3e3e3;
+}
+
+.create_container {
+  border-radius: 5px;
+  background-color: #FBFCFC;
+  margin: 15px;
+  padding: 15px;
+  position: relative;
+  box-shadow: 4px 4px 2px #e3e3e3;
+}
+
+.two.columns {
+  width: 15.75%;
+}
+.subheader {
+  border-radius: 5px;
+  background-color: #5D6D7E;
+  margin: 8px;
+  position: relative;
+  box-shadow: 4px 4px 2px #e3e3e3;
+}
+
+.six.columns {
+  width: 49%;
+}
+
+.smallheader{
+  border-radius: 5px;
+  margin: 8px;
+  position: relative;
+  box-shadow: 4px 4px 2px #e3e3e3;
+}
+
+.dcc_compon {
+  margin: 0;
+  padding: 5px;
+  width: calc(100%-40px);
+}
