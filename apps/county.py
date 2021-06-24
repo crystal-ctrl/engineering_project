@@ -351,11 +351,11 @@ def update_case_plot2(county_dropdown,case_measure):
             Input("dose_value","value")])
 def update_dose_plot(county_dropdown, dose_value):
     vax_df = vax[(vax.locality == county_dropdown)].reset_index()
-    dose_df =vax_df[vax_df.dose_number == dose_value].groupby(['facility_type','vaccine_manufacturer']).vaccine_doses_administered.sum().reset_index()
+    dose_df =vax_df[(vax_df.vaccine_manufacturer != 'Non-Specified')&(vax_df.dose_number == dose_value)].groupby(['facility_type','vaccine_manufacturer']).vaccine_doses_administered.sum().reset_index()
     dose_df = dose_df.pivot_table(index='facility_type', columns='vaccine_manufacturer', aggfunc='sum').fillna(0).reset_index()
     dose_df.columns = dose_df.columns.map(''.join)
     if dose_value == 1:
-        dose_df.columns = ['facility_type', 'J&J', 'Moderna', 'Non-Specified', 'Pfizer']
+        dose_df.columns = ['facility_type', 'J&J', 'Moderna', 'Pfizer']
     elif dose_value == 2:
         dose_df.columns = ['facility_type','Moderna','Pfizer']
     dose_df.set_index('facility_type', inplace=True)
@@ -367,7 +367,7 @@ def update_dose_plot(county_dropdown, dose_value):
              y = [c for c in dose_df.columns],
              template = 'plotly_white',
              color_discrete_sequence = colors,
-             title = 'Types of Vaccine Administered at Different Facilities',
+             title = 'Types of Vaccine Administered at Different Facilities'
              )
     fig.update_layout(barmode='stack',
                     legend=dict(title=None, orientation="h",
