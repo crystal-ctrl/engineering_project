@@ -51,3 +51,5 @@ So the goal of this project is to **build a pipeline for a dashboard to visualiz
 
 In addition to the [presentation slides](https://github.com/crystal-ctrl/engineering_project/blob/main/Presentation.pdf), you can check out the app [here](https://vaxcovid.herokuapp.com/).
 
+Notebooks can be found [here](https://github.com/crystal-ctrl/engineering_project/tree/main/Notebooks).
+
